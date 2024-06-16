@@ -40,6 +40,8 @@ def input_selling_price(converted_price: float, max_adjustable_amout: float, int
         str.session_state.previous_slider = converted_price
     if "previous_input" not in str.session_state:
         str.session_state.previous_input = converted_price
+    if "selling_price" not in str.session_state:
+        str.session_state.selling_price = 0
     
     # Create widgets for selling price input
     selling_price_slider = str.slider("Mau dijual dengan harga berapa?", converted_price, converted_price + max_adjustable_amout, step=intended_step, key="selling_slider")
@@ -108,4 +110,3 @@ def main():
         
 if __name__ == "__main__":
     main()
-    
